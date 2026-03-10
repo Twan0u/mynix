@@ -35,9 +35,34 @@ Configuration NixOS personnelle avec flake pour une installation reproductible. 
 
 ## Personnalisation
 
+### Configuration des secrets (optionnel)
+
+Si tu veux utiliser tes infos personnelles (git, etc.) sans les exposer sur GitHub :
+
+1. Copie le fichier exemple :
+   ```bash
+   cp secrets.nix.example secrets.nix
+   ```
+
+2. Édite `secrets.nix` avec tes infos personnelles
+
+3. Dans `home.nix`, remplace les valeurs par défaut par :
+   ```nix
+   let
+     secrets = import ./secrets.nix;
+   in
+   { 
+     # ... puis utilise secrets.gitUserName et secrets.gitUserEmail
+   }
+   ```
+
+### Configuration du système
+
 - Modifie `configuration.nix` pour ajuster la config système.
 - Modifie `home.nix` pour la config utilisateur (packages, programmes).
 - Ajoute des modules dans `custom/` pour des fonctionnalités spécifiques.
+
+**Note** : `secrets.nix` est ignoré par git pour éviter d'exposer tes infos personnelles.
 
 ## Rebuild
 

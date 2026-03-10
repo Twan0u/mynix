@@ -3,6 +3,9 @@ result/
 .direnv/
 .envrc
 
+# Secrets
+secrets.nix
+
 # Editor
 .vscode/
 .idea/

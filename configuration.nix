@@ -52,8 +52,8 @@
   # names you had here don’t exist, which is why the flake build was
   # failing with "The option `services.desktopManager.gnome' does not
   # exist".
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -74,7 +74,7 @@
   # explicitly disable the hardware pulse audio driver to satisfy the
   # PipeWire conflict check.  Without this, `nixos-rebuild` fails as seen
   # earlier.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   
   services.pipewire = {
     enable = true;

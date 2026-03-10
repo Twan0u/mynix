@@ -6,11 +6,12 @@
     # Ajoute d'autres packages utilisateur ici
   ];
 
-  # Exemple de config home-manager
   programs.git = {
     enable = true;
-    userName = "Antoine";
-    userEmail = "ant.lamb.al@gmail.com";
+    settings = {
+      user.name = "Antoine";
+      user.email = "ant.lamb.al@gmail.com";
+    };
   };
 
   home.stateVersion = "25.11";
