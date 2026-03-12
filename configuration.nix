@@ -8,8 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./custom/monitoring.nix
-      ./custom/developper.nix
     ];
 
   # Bootloader.
@@ -99,10 +97,8 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [
-    obsidian
-    spotify
-  ];
+  # environment.systemPackages = with pkgs; [
+  # ];
 
 
   system.stateVersion = "25.11";

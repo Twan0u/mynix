@@ -2,8 +2,12 @@
 
 {
   home.packages = with pkgs; [
-    htop
-    # Ajoute d'autres packages utilisateur ici
+    obsidian
+    spotify
+    git
+    vscode
+    btop
+    neofetch
   ];
 
   programs.git = {
